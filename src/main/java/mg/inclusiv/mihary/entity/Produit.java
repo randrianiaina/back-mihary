@@ -3,6 +3,7 @@ package mg.inclusiv.mihary.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+
 @Entity
 @Table(name = "produit")
 public class Produit {

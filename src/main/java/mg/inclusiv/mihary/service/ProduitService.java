@@ -15,4 +15,13 @@ public class ProduitService {
     public List<Produit> getAllProduits() {
         return produitRepository.findAll();
     }
+
+
+    public Produit saveProduit(Produit produit) {
+        return produitRepository.save(produit);
+    }
+
+    public void deleteProduitById(Long id) {
+        produitRepository.deleteById(id);
+    }
 }
