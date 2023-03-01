@@ -17,4 +17,10 @@ public class Panier {
 
     private Double prixActuel;
 
+    @OneToOne
+    private Produit produit;
+
+    @ManyToOne
+    private Commande commande;
+
 }

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -15,11 +16,13 @@ public class Deal {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer idDeal;
-    @ManyToOne
-    @JoinColumn(name = "utilisateurId")
-    private mg.inclusiv.mihary.entity.Utilisateur utilisateur;
+
     private Date dateDeal;
     private Double montantDeal;
     private String typeDeal;
     private String libelleDeal;
+
+  @ManyToOne
+    private Utilisateur utilisateur;
+
 }
