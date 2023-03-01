@@ -15,11 +15,13 @@ public class CategorieService {
         return categorieRepository.findAll();
     }
 
-    public Categorie saveCategorie(Categorie categorie) {
+    public Categorie saveCooperative(Categorie categorie) {
         return categorieRepository.save(categorie);
     }
 
-    public void deleteCategorieById(Long id) {
+    public void deleteCooperativeById(Long id) {
         categorieRepository.deleteById(id);
     }
+
+
 }
