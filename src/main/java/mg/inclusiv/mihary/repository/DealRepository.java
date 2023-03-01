@@ -1,6 +1,6 @@
-package mg.inclusiv.mihary.Repository;
+package mg.inclusiv.mihary.repository;
 
-import mg.inclusiv.mihary.Entity.Deal;
+import mg.inclusiv.mihary.entity.Deal;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

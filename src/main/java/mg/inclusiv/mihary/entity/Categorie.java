@@ -18,7 +18,7 @@ public class Categorie {
     private String description;
 
     @OneToMany(mappedBy = "categorie")
-    private List<Produit> produits;
+    private List<mg.inclusiv.mihary.entity.Produit> produits;
 
     // Getters et setters
 }

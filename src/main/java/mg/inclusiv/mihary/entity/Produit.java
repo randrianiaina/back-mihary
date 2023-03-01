@@ -26,7 +26,7 @@ public class Produit {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categorie_id")
-    private Categorie categorie;
+    private mg.inclusiv.mihary.entity.Categorie categorie;
 
 
 
