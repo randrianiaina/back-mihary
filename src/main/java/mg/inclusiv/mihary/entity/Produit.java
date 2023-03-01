@@ -1,9 +1,12 @@
 package mg.inclusiv.mihary.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Blob;
 
-
+@Data
 @Entity
 @Table(name = "produit")
 public class Produit {
@@ -16,6 +19,8 @@ public class Produit {
     private String description;
 
     private BigDecimal prix;
+
+    private Blob photoProduit;
 
     private Integer quantite;
 
