@@ -16,7 +16,7 @@ public class Utilisateur {
     private String contact;
     private String email;
     private double solde;
-    private Blob photo;
+    //private Blob photo;
     private long nifcoop;
     private long statcoop;
     private String responsable;
