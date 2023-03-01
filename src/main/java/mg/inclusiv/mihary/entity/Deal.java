@@ -15,7 +15,7 @@ public class Deal {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer idDeal;
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "utilisateurId")
     private mg.inclusiv.mihary.entity.Utilisateur utilisateur;
     private Date dateDeal;

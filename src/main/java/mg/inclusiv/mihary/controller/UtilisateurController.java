@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cooperative")
-public class utilisateurController {
+public class UtilisateurController {
 
     @Autowired
     UtilisateurService utilisateurService;

@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Blob;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,9 +27,13 @@ public class Produit {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categorie_id")
-    private mg.inclusiv.mihary.entity.Categorie categorie;
+    private Categorie categorie;
 
+    @OneToMany(mappedBy = "approvisionnement")
+    private List<Approvisionnement> appro;
 
+    @OneToOne(mappedBy = "panier")
+    private Panier panier;
 
     // Getters et setters
 }
