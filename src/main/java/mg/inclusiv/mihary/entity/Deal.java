@@ -1,4 +1,4 @@
-package mg.inclusiv.mihary.Entity;
+package mg.inclusiv.mihary.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +17,7 @@ public class Deal {
     private Integer idDeal;
     @ManyToOne
     @JoinColumn(name = "utilisateurId")
-    private Utilisateur utilisateur;
+    private mg.inclusiv.mihary.entity.Utilisateur utilisateur;
     private Date dateDeal;
     private Double montantDeal;
     private String typeDeal;

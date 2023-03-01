@@ -1,7 +1,7 @@
-package mg.inclusiv.mihary.Controller;
+package mg.inclusiv.mihary.controller;
 
 
-import mg.inclusiv.mihary.Entity.Deal;
+import mg.inclusiv.mihary.entity.Deal;
 import mg.inclusiv.mihary.Service.DealService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

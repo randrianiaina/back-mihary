@@ -16,7 +16,7 @@ public class Qualite implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @ManyToOne
-    private Produit produit;
+    private mg.inclusiv.mihary.entity.Produit produit;
     private String typequalite;
     private double prixvente;
 }

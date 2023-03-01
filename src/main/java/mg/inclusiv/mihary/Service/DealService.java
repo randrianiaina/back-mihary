@@ -1,7 +1,7 @@
 package mg.inclusiv.mihary.Service;
 
-import mg.inclusiv.mihary.Entity.Deal;
-import mg.inclusiv.mihary.Repository.DealRepository;
+import mg.inclusiv.mihary.entity.Deal;
+import mg.inclusiv.mihary.repository.DealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
