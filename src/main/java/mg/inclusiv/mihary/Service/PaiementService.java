@@ -1,4 +1,4 @@
-package mg.inclusiv.mihary.Service;
+package mg.inclusiv.mihary.service;
 
 import mg.inclusiv.mihary.entity.Paiement;
 import mg.inclusiv.mihary.repository.PaiementRepository;

@@ -11,4 +11,10 @@ public class LigneCommande {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
+
+    private double qtecommande;
+
+
+
+
 }
