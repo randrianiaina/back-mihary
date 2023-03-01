@@ -10,8 +10,5 @@ public class MiharyApplication {
     public static void main(String[] args) {
         SpringApplication.run(MiharyApplication.class, args);
     }
-    @GetMapping("/helloworld")
-    public String hello() {
-        return"Hello World!";
-    }
+
 }
