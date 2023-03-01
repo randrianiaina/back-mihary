@@ -3,9 +3,31 @@
                 xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Quality</title>
 </head>
 <body>
-
+    <h1>Quality List</h1>
+    <a href="/new">Créer qualité</a>
+    <br><br>
+    <table class="table">
+        <thead class="table-header table-sub-heading-color">
+        <tr>
+            <th>ID</th>
+            <th>Type de qualité</th>
+            <th>Prix de vente</th>
+        </tr>
+        </thead>
+        <tbody class="table-info table-active table-sub-heading-color">
+        <tr th:each="qualite : ${qualiteList}">
+            <td th:text="${qualite.id}">ID</td>
+            <td th:text="${qualite.typequalite}">Type de qualité</td>
+            <td th:text="${qualite.prixvente}">Prix de vente</td>
+<!--            <td>-->
+<!--                <a th:href="/@{'/edit/' + ${qualite.id}}">[Modif]</a>-->
+<!--                &nbsp;&nbsp;&nbsp;-->
+<!--            </td>-->
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>
