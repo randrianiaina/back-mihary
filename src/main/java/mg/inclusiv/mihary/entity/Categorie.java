@@ -1,8 +1,11 @@
 package mg.inclusiv.mihary.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "categorie")
 public class Categorie {
