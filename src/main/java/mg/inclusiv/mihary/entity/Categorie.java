@@ -11,14 +11,15 @@ import java.util.List;
 public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String nom;
-
-    private String description;
+    private Long idCategorie;
+    @Column(length = 50)
+    private String nomCategorie;
+    @Column(length = 50,nullable = true)
+    private String descriptionCategorie;
 
     @OneToMany(mappedBy = "categorie")
     private List<Produit> produits;
+
 
     // Getters et setters
 }

@@ -24,4 +24,10 @@ public class ProduitService {
     public void deleteProduitById(Long id) {
         produitRepository.deleteById(id);
     }
+
+    public void findProduitById(Long id){
+        produitRepository.findById(id);
+    }
+
+
 }

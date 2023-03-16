@@ -1,6 +1,5 @@
 package mg.inclusiv.mihary.service;
 
-import mg.inclusiv.mihary.entity.Categorie;
 import mg.inclusiv.mihary.entity.Utilisateur;
 import mg.inclusiv.mihary.repository.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +19,10 @@ public class UtilisateurService {
     }
 
     public void deleteUser(int id) {utilisateurRepository.deleteById(id); }
+
+    public void finUserById(int id) {
+        utilisateurRepository.findById(id);
+    }
 
 
 
