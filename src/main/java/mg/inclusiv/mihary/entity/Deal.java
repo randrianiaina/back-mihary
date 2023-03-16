@@ -24,6 +24,6 @@ public class Deal {
 
     @Column(length = 50)
     private String typeDeal;
-    @Column(length = 50,nullable = true)
+    @Column(length = 50)
     private String libelleDeal;
 }
