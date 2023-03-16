@@ -12,6 +12,7 @@ public class CategorieService {
     private CategorieRepository categorieRepository;
 
     public List<Categorie> getAllCategories() {
+
         return categorieRepository.findAll();
     }
 
