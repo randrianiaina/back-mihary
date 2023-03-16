@@ -14,11 +14,11 @@ public class Categorie {
     private Long idCategorie;
     @Column(length = 50)
     private String nomCategorie;
-    @Column(length = 50,nullable = true)
+    @Column(length = 50)
     private String descriptionCategorie;
 
     @OneToMany(mappedBy = "categorie")
-    private List<Produit> produits;
+    private List<mg.inclusiv.mihary.entity.Produit> produits;
 
 
     // Getters et setters
