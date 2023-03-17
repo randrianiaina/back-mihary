@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProduitService {
@@ -16,18 +17,20 @@ public class ProduitService {
         return produitRepository.findAll();
     }
 
-
-    public Produit saveProduit(Produit produit) {
-        return produitRepository.save(produit);
+    public Produit getProduitById(Long id) {
+        Optional<Produit> optionalProduit = produitRepository.findById(id);
+        return optionalProduit.orElse(null);
     }
 
-    public void deleteProduitById(Long id) {
+    public void addProduit(Produit produit) {
+        produitRepository.save(produit);
+    }
+
+    public void updateProduit(Produit produit) {
+        produitRepository.save(produit);
+    }
+
+    public void deleteProduit(Long id) {
         produitRepository.deleteById(id);
     }
-
-    public void findProduitById(Long id){
-        produitRepository.findById(id);
-    }
-
-
 }
