@@ -1,32 +1,55 @@
 package mg.inclusiv.mihary.controller;
 
-
 import mg.inclusiv.mihary.entity.Deal;
 import mg.inclusiv.mihary.service.DealService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/deal")
+@RequestMapping("/deals")
 public class DealController {
+
         @Autowired
-        public DealService dealService;
-        @GetMapping("/list")
-        public List<Deal> dealList(){
-            return dealService.dealList();
+        private DealService dealService;
+
+        @GetMapping("")
+        public List<Deal> getAllDeals() {
+                return dealService.getAllDeals();
         }
-        @PostMapping("/add")
-        public void ajouterDeal(@RequestBody Deal deal){
-            dealService.save(deal);
+
+        @GetMapping("/{id}")
+        public ResponseEntity<Deal> getDealById(@PathVariable(value = "id") Integer dealId)
+                throws ResourceNotFoundException {
+                Deal deal = dealService.getDealById(dealId)
+                        .orElseThrow(() -> new ResourceNotFoundException("Deal non trouvé pour cet identifiant :: " + dealId));
+                return ResponseEntity.ok().body(deal);
         }
-        @DeleteMapping("/delete/{id}")
-        public void supprimerDeal(@PathVariable ("id")Integer id){
-                dealService.delete(id);}
 
+        @PostMapping("")
+        public Deal createDeal(@Valid @RequestBody Deal deal) {
+                return dealService.saveDeal(deal);
+        }
 
+        @PutMapping("/{id}")
+        public ResponseEntity<Deal> updateDeal(@PathVariable(value = "id") Integer dealId,
+                                               @Valid @RequestBody Deal dealDetails) throws ResourceNotFoundException {
+                Deal updatedDeal = dealService.updateDeal(dealId, dealDetails);
+                return ResponseEntity.ok(updatedDeal);
+        }
 
-
-
+        @DeleteMapping("/{id}")
+        public Map<String, Boolean> deleteDeal(@PathVariable(value = "id") Integer dealId)
+                throws ResourceNotFoundException {
+                dealService.deleteDeal(dealId);
+                Map<String, Boolean> response = new HashMap<>();
+                response.put("deleted", Boolean.TRUE);
+                return response;
+        }
 }
