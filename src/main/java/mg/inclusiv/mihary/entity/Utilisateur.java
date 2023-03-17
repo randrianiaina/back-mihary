@@ -1,4 +1,4 @@
-    package mg.inclusiv.mihary.entity;
+package mg.inclusiv.mihary.entity;
 
 
     import com.fasterxml.jackson.annotation.JsonIgnore;
