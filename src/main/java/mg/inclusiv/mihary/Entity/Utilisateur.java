@@ -49,6 +49,13 @@ public class Utilisateur {
     @OneToMany(mappedBy = "utilisateur",fetch = FetchType.LAZY)
     private List<Commande> commandes;
 
+        public enum TypeUtilisateur {
+            COOPERATIVE,
+            AGRICULTEUR,
+            CLIENT
+        }
 
+        @Enumerated(EnumType.STRING)
+        private TypeUtilisateur typeUtilisateur;
 
 }
